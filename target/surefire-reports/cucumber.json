@@ -1,0 +1,159 @@
+[
+  {
+    "id": "buscar-conteudo",
+    "description": "",
+    "name": "Buscar conteudo",
+    "keyword": "Funcionalidade",
+    "line": 4,
+    "elements": [
+      {
+        "description": "",
+        "name": "",
+        "keyword": "Contexto",
+        "line": 6,
+        "steps": [
+          {
+            "result": {
+              "duration": 37419273524,
+              "status": "passed"
+            },
+            "name": "que estou na pagina inicial",
+            "keyword": "Dado ",
+            "line": 7,
+            "match": {
+              "location": "PaginaInicialStep.queEstouNaPaginaInicial()"
+            }
+          },
+          {
+            "result": {
+              "duration": 17657903944,
+              "status": "passed"
+            },
+            "name": "selecionar estado da busca",
+            "keyword": "E ",
+            "line": 8,
+            "match": {
+              "location": "BuscandoProdutosStep.selecionarEstadoDaBusca(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Estado"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "SP"
+                ],
+                "line": 10
+              }
+            ]
+          }
+        ],
+        "type": "background"
+      },
+      {
+        "id": "buscar-conteudo;realizar-uma-pesquisa-no-site-da-olx-que-contenha-paginacao,-tirar-um-print-do-primeiro-anuncio-da-segunda-pagina",
+        "tags": [
+          {
+            "name": "@ID2",
+            "line": 19
+          }
+        ],
+        "description": "",
+        "name": "Realizar uma pesquisa no site da OLX que contenha paginacao, tirar um print do primeiro anuncio da segunda pagina",
+        "keyword": "Cenario",
+        "line": 20,
+        "steps": [
+          {
+            "result": {
+              "duration": 188040212,
+              "status": "passed"
+            },
+            "name": "realizar busca de um produto",
+            "keyword": "Quando ",
+            "line": 21,
+            "match": {
+              "location": "BuscandoProdutosStep.realizarBuscaDeUmProduto(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Busca"
+                ],
+                "line": 22
+              },
+              {
+                "cells": [
+                  "casa"
+                ],
+                "line": 23
+              }
+            ]
+          },
+          {
+            "result": {
+              "duration": 5144456713,
+              "status": "passed"
+            },
+            "name": "realizar paginacao",
+            "keyword": "E ",
+            "line": 24,
+            "match": {
+              "location": "BuscandoProdutosStep.realizarPaginacao(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Pagina"
+                ],
+                "line": 25
+              },
+              {
+                "cells": [
+                  "2"
+                ],
+                "line": 26
+              }
+            ]
+          },
+          {
+            "result": {
+              "duration": 127669115,
+              "status": "passed"
+            },
+            "name": "e apresentado resultado da busca dos primeiros \"1\" resultados",
+            "keyword": "Entao ",
+            "line": 27,
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 48
+                }
+              ],
+              "location": "BuscandoProdutosStep.eApresentadoResultadoDaBusca(int)"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "BuscaOlx.feature",
+    "comments": [
+      {
+        "value": "#language: pt",
+        "line": 1
+      },
+      {
+        "value": "#Version: 1.0",
+        "line": 2
+      },
+      {
+        "value": "#Encoding: iso-8859-1",
+        "line": 3
+      }
+    ]
+  }
+]

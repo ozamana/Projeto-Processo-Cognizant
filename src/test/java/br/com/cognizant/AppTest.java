@@ -1,4 +1,4 @@
-package br.com.cognizant;
+package br.com.osmair;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

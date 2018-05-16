@@ -1,62 +1,94 @@
-package pageobjects;
+package pageobjetcs;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BuscandoProdutoPage extends Page {
+public class Resultado extends Page{
 
-	public BuscandoProdutoPage(WebDriver driver) {
+	public Resultado(WebDriver driver) {
 		super(driver);
+		
 	}
-
-	public WebElement getCampoBuscar() {
-		return getElement(".//input[contains(@class, 'placeholder')]");
+	
+	public WebElement getPerguntasFrequentes(){
+		return getElement("//li[@class='list-inline_item']//*[@href='http://atendimentocea.zendesk.com']");
 	}
-
-	public void setCampoBuscar(String produto) {
-		getCampoBuscar().sendKeys(produto);
+	
+	public void clickPerguntasFrequentes(){
+		getPerguntasFrequentes().click();
 	}
-
-	public WebElement getBotaoBuscar() {
-		return getElement(".//input[contains(@class, 'btn-search')]");
+	
+	public WebElement getPerguntas(){
+		
+		return getElement("//h3[@class='p-art-title' and contains (text(),'Quais as condições de Troca & Devolução')]");
 	}
-
-	public void clickBotaoBuscar() {
-		getBotaoBuscar().click();
+	
+	public void clickPerguntas(){
+		
+		getPerguntas().click();
+		
 	}
-
-	public List<WebElement> getGridResultadosBusca() {
-		List<WebElement> listaElementos;
-		return listaElementos = driver
-				.findElements(By.xpath(".//div[contains(@class, 'section_OLXad-list')]//ul/li/a"));
+	
+	public WebElement getTextFrequentes(){
+		
+		return getElement("//ul[@id='r1a']//li");
 	}
-
-	public WebElement getTituloProduto(WebElement elemento) {
-		WebElement tituloProduto = elemento.findElement(By.xpath("div[2]//h3"));
-		return tituloProduto;
+	
+	public String getTextPerguntas(){
+		
+		return getTextFrequentes().getText();
 	}
+	
+	public WebElement getInstitucional(){
+		
+		return getElement("//*[contains(text(),'LOJA FÍSICA')]/following::li[6]");
 
-	public WebElement getValorProduto(WebElement elemento) {
-		WebElement elementoValorProduto = null;
-		try {
-			elementoValorProduto = elemento.findElement(By.xpath("div[3]//p"));
-		} catch (NoSuchElementException e) {
-			elementoValorProduto = null;
-			System.err.println("An�ncio sem valor.");
-
-		}
-		return elementoValorProduto;
 	}
-
-	public WebElement getPaginacao(String pag) {
-		return getElement(".//li[@class = 'item number']//a[@title = '" + pag + "']");
+	
+	public void clickInstitucional(){
+		
+		getInstitucional().click();
 	}
-
-	public void clickPaginacao(String pag) {
-		getPaginacao(pag).click();
+	
+	public WebElement getTelefoneCartao(){
+		
+		return getElement("//*[@class='section-tree']/descendant::li[1]");
+		
 	}
+	
+	public WebElement getTelefone(){
+		return getElement("//a[contains(text(),'Telefone do Cartão C&A')]");
+	}
+	public void clickTelefoneCartao(){
+		
+		getTelefone().click();
+	}
+	
+	public WebElement getAtendimentoLoja(){
+		
+		return getElement("//*[@class='section-tree']/descendant::li[2]");
+	}
+	
+	public WebElement getOndeLocalizar(){
+		
+		return getElement("//*[@class='section-tree']/descendant::li[3]");
+	}
+	
+	public WebElement getComprarCartao(){
+		
+		return getElement("//*[@class='section-tree']/descendant::li[4]");
+		
+	}
+	
+	public WebElement getEnviarCurriculo(){
+		
+		return getElement("//*[@class='section-tree']/descendant::li[5]");
+		
+	}
+	
+	public WebElement getImg(){
+		return getElement("//h1[contains(text(),'Telefone do Cartão C&A')]/following::img[1]");
+		
+	}
+	
 }

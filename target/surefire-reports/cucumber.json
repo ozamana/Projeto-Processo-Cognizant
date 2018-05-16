@@ -1,159 +1,239 @@
 [
   {
-    "id": "buscar-conteudo",
-    "description": "",
-    "name": "Buscar conteudo",
-    "keyword": "Funcionalidade",
-    "line": 4,
-    "elements": [
+    "comments": [
       {
-        "description": "",
-        "name": "",
-        "keyword": "Contexto",
-        "line": 6,
-        "steps": [
-          {
-            "result": {
-              "duration": 37419273524,
-              "status": "passed"
-            },
-            "name": "que estou na pagina inicial",
-            "keyword": "Dado ",
-            "line": 7,
-            "match": {
-              "location": "PaginaInicialStep.queEstouNaPaginaInicial()"
-            }
-          },
-          {
-            "result": {
-              "duration": 17657903944,
-              "status": "passed"
-            },
-            "name": "selecionar estado da busca",
-            "keyword": "E ",
-            "line": 8,
-            "match": {
-              "location": "BuscandoProdutosStep.selecionarEstadoDaBusca(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Estado"
-                ],
-                "line": 9
-              },
-              {
-                "cells": [
-                  "SP"
-                ],
-                "line": 10
-              }
-            ]
-          }
-        ],
-        "type": "background"
+        "line": 1,
+        "value": "#language: pt"
       },
       {
-        "id": "buscar-conteudo;realizar-uma-pesquisa-no-site-da-olx-que-contenha-paginacao,-tirar-um-print-do-primeiro-anuncio-da-segunda-pagina",
-        "tags": [
-          {
-            "name": "@ID2",
-            "line": 19
-          }
-        ],
+        "line": 2,
+        "value": "#Version: 1.0"
+      },
+      {
+        "line": 3,
+        "value": "#Encoding: iso-8859-1"
+      }
+    ],
+    "line": 5,
+    "elements": [
+      {
+        "line": 7,
+        "name": "Realizacao do acesso inicial como pre-requisito",
         "description": "",
-        "name": "Realizar uma pesquisa no site da OLX que contenha paginacao, tirar um print do primeiro anuncio da segunda pagina",
-        "keyword": "Cenario",
-        "line": 20,
+        "type": "background",
+        "keyword": "Contexto",
         "steps": [
           {
             "result": {
-              "duration": 188040212,
+              "duration": 5077008379,
               "status": "passed"
             },
-            "name": "realizar busca de um produto",
-            "keyword": "Quando ",
-            "line": 21,
+            "line": 9,
+            "name": "que estou na pagina inicial",
             "match": {
-              "location": "BuscandoProdutosStep.realizarBuscaDeUmProduto(DataTable)"
+              "location": "PaginaInicialStep.que_estou_na_pagina_inicial()"
             },
-            "rows": [
-              {
-                "cells": [
-                  "Busca"
-                ],
-                "line": 22
-              },
-              {
-                "cells": [
-                  "casa"
-                ],
-                "line": 23
-              }
-            ]
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "line": 13,
+        "name": "Realizar aÃ§Ã£o de pesquisa de perguntas frequentes",
+        "description": "",
+        "id": "buscar-elementos-de-perguntas-frequentes,-perguntas-exibidas-e-valores-da-tela;realizar-aã§ã£o-de-pesquisa-de-perguntas-frequentes",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12766650352,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "acessar categoria de ajuda",
+            "match": {
+              "location": "ResultadoStep.acessar_categoria_de_ajuda()"
+            },
+            "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 5144456713,
+              "duration": 514303789,
               "status": "passed"
             },
-            "name": "realizar paginacao",
-            "keyword": "E ",
-            "line": 24,
+            "line": 17,
+            "name": "apresenta resultado das perguntas frequentes e realiza print",
             "match": {
-              "location": "BuscandoProdutosStep.realizarPaginacao(DataTable)"
+              "location": "ResultadoStep.apresentaResultadoDasPerguntasFrequentesERealizaPrint()"
             },
-            "rows": [
-              {
-                "cells": [
-                  "Pagina"
-                ],
-                "line": 25
-              },
-              {
-                "cells": [
-                  "2"
-                ],
-                "line": 26
-              }
-            ]
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@ID01"
+          },
+          {
+            "line": 11,
+            "name": "@ExecutaCenarios"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Realizacao do acesso inicial como pre-requisito",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 1175462903,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que estou na pagina inicial",
+            "match": {
+              "location": "PaginaInicialStep.que_estou_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "line": 22,
+        "name": "Realizar pesquisa \"Institucional\" na seÃ§Ã£o \"Loja FÃ­sica\"",
+        "description": "",
+        "id": "buscar-elementos-de-perguntas-frequentes,-perguntas-exibidas-e-valores-da-tela;realizar-pesquisa-\"institucional\"-na-seã§ã£o-\"loja-fã­sica\"",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4896404555,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "acessar a opcao institucional na secao de loja fisica",
+            "match": {
+              "location": "ResultadoStep.acessar_a_categoria_institucional_na_secao_de_loja_fisica()"
+            },
+            "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 127669115,
+              "duration": 570323459,
               "status": "passed"
             },
-            "name": "e apresentado resultado da busca dos primeiros \"1\" resultados",
-            "keyword": "Entao ",
             "line": 27,
+            "name": "validar as perguntas exibidas na tela",
+            "match": {
+              "location": "ResultadoStep.validar_as_perguntas_exibidas_na_tela()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 20,
+            "name": "@ID02"
+          },
+          {
+            "line": 20,
+            "name": "@ExecutaCenarios"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Realizacao do acesso inicial como pre-requisito",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 1045126956,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que estou na pagina inicial",
+            "match": {
+              "location": "PaginaInicialStep.que_estou_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "line": 31,
+        "name": "Realizar pesquisa do Telefone do CartÃ£o C\u0026A",
+        "description": "",
+        "id": "buscar-elementos-de-perguntas-frequentes,-perguntas-exibidas-e-valores-da-tela;realizar-pesquisa-do-telefone-do-cartã£o-c\u0026a",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11692995819,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "acessar opcao \"Telefone do CartÃ£o C\u0026A\"",
             "match": {
               "arguments": [
                 {
-                  "val": "1",
-                  "offset": 48
+                  "val": "Telefone do CartÃ£o C\u0026A",
+                  "offset": 15
                 }
               ],
-              "location": "BuscandoProdutosStep.eApresentadoResultadoDaBusca(int)"
-            }
+              "location": "ResultadoStep.acessar_opcao(String)"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 400989374,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "salvar a imagem do cartao",
+            "match": {
+              "location": "ResultadoStep.salvar_a_imagem_do_cartÃ£o()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 16410,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "validar os telefones",
+            "match": {
+              "location": "ResultadoStep.validar_os_telefones()"
+            },
+            "keyword": "Entao "
           }
         ],
-        "type": "scenario"
+        "tags": [
+          {
+            "line": 29,
+            "name": "@ID03"
+          },
+          {
+            "line": 29,
+            "name": "@ExecutaCenarios"
+          }
+        ]
       }
     ],
-    "uri": "BuscaOlx.feature",
-    "comments": [
-      {
-        "value": "#language: pt",
-        "line": 1
-      },
-      {
-        "value": "#Version: 1.0",
-        "line": 2
-      },
-      {
-        "value": "#Encoding: iso-8859-1",
-        "line": 3
-      }
-    ]
+    "name": "Buscar elementos de perguntas frequentes, perguntas exibidas e valores da tela",
+    "description": "",
+    "id": "buscar-elementos-de-perguntas-frequentes,-perguntas-exibidas-e-valores-da-tela",
+    "keyword": "Funcionalidade",
+    "uri": "Busca.feature"
   }
 ]

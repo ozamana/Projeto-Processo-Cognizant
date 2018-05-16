@@ -6,4 +6,4 @@ Funcionalidade: Realizar acesso a pagina inicial
   @Acesso
   Cenario: Validar acesso a pagina inicial
     Dado que estou na pagina inicial
-    Entao e exibida o site OLX
+    Entao vai exibir o site da C&A

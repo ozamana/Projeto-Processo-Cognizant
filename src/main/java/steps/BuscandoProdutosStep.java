@@ -1,41 +1,46 @@
 package steps;
 
-import java.util.Map;
-
-import cucumber.api.DataTable;
-import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import funcionalidades.BuscandoProdutoFuncionalidade;
-import funcionalidades.PaginaInicialFuncionalidade;
+import funcionalidades.ResultadoFuncionalidade;
 
-public class BuscandoProdutosStep {
-	PaginaInicialFuncionalidade paginaInicialStep = new PaginaInicialFuncionalidade();
-	BuscandoProdutoFuncionalidade buscandoProduto = new BuscandoProdutoFuncionalidade();
-
-	@Dado("^selecionar estado da busca$")
-	public void selecionarEstadoDaBusca(DataTable credenciais) throws Throwable {
-		for (Map<String, String> map : credenciais.asMaps(String.class, String.class)) {
-			paginaInicialStep.selecionarEstado(map.get("Estado"));
-		}
+public class ResultadoStep {
+		
+	ResultadoFuncionalidade resultado = new ResultadoFuncionalidade();
+		
+	@Quando("^acessar categoria de ajuda$")
+	public void acessar_categoria_de_ajuda() throws Throwable {
+		resultado.acessarAjuda();
+	}
+	
+	@Entao("^apresenta resultado das perguntas frequentes e realiza print$")
+	public void apresentaResultadoDasPerguntasFrequentesERealizaPrint() throws Throwable {
+		resultado.expandirPerguntas();
+	}
+	
+	@Quando("^acessar a opcao institucional na secao de loja fisica$")
+	public void acessar_a_categoria_institucional_na_secao_de_loja_fisica() throws Throwable {
+		resultado.acessaInstitucional();
 	}
 
-	@Quando("^realizar busca de um produto$")
-	public void realizarBuscaDeUmProduto(DataTable credenciais) throws Throwable {
-		for (Map<String, String> map : credenciais.asMaps(String.class, String.class)) {
-			buscandoProduto.realizaBusca(map.get("Busca"));
-		}
+	@Entao("^validar as perguntas exibidas na tela$")
+	public void validar_as_perguntas_exibidas_na_tela() throws Throwable {
+		resultado.validaInformacoesIntitucionais();
+		
+	}
+	
+	@Quando("^acessar opcao \"([^\"]*)\"$")
+	public void acessar_opcao(String arg1) throws Throwable {
+		resultado.acessarTelefonedoCartao();
 	}
 
-	@Entao("^e apresentado resultado da busca do \"([^\"]*)\" resultado$")
-	public void eApresentadoResultadoDaBusca(int quantidade) throws Throwable {
-		buscandoProduto.imprimindoResultadosGrid(quantidade);
+	@Quando("^salvar a imagem do cartao$")
+	public void salvar_a_imagem_do_cartÃ£o() throws Throwable {
+		resultado.downloadImg();
 	}
 
-	@Quando("^realizar paginacao$")
-	public void realizarPaginacao(DataTable credenciais) throws Throwable {
-		for (Map<String, String> map : credenciais.asMaps(String.class, String.class)) {
-			buscandoProduto.realizaPaginacao(map.get("Pagina"));
-		}
+	@Entao("^validar os telefones$")
+	public void validar_os_telefones() throws Throwable {
 	}
+
 }

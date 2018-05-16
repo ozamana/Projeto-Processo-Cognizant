@@ -2,36 +2,28 @@ package funcionalidades;
 
 import org.openqa.selenium.WebDriver;
 
-import pageobjects.PaginaInicial;
-import util.Navegacao;
+import pageobjetcs.PaginaInicial;
+import util.Navegador;
 
 public class PaginaInicialFuncionalidade {
+
 	private WebDriver driver;
 	private PaginaInicial paginaInicial;
-	private String url = "http://www.olx.com.br/";
+	private String url = "http://www.cea.com.br/";
 
-	public PaginaInicialFuncionalidade() {
-		driver = Navegacao.getChromeDriver();
-		paginaInicial = new PaginaInicial(driver);
+	public PaginaInicialFuncionalidade (){
+		driver = Navegador.getChromeDriver();
+		paginaInicial = new PaginaInicial(driver);		
+
 	}
-
-	public void goToLogin() {
+	public void login(){
 		driver.get(url);
 	}
 
-	public boolean isPaginaInicial() {
-		if (paginaInicial.getUrlIndex().contains("olx"))
+	public boolean isPaginaInicial(){
+		if(paginaInicial.getURL().contains("cea")){
 			return true;
-		return false;
+		}return false;
 	}
-	
-	public void selecionarEstado(String estado){
-		try{
-			paginaInicial.clickSelecionaEstado(paginaInicial.getSelecionaEstado(estado));
-		}catch(Exception e){
-			System.out.println(e.getMessage());
-			driver.quit();			
-		}
-	}
-	
+
 }
